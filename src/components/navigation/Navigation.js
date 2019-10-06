@@ -1,5 +1,7 @@
 import React from 'react'
 import { NavLink, Link } from 'react-router-dom'
+import { slide as Menu } from 'react-burger-menu'
+
 import neoLogo from '../../images/neo-logo.svg'
 import cozLogo from '../../images/coz-logo.svg'
 
@@ -18,8 +20,8 @@ export const PreviewLogo = () => (
   </div>
 )
 
-export const Navigation = () => {
-  return (
+export const Navigation = () => (
+  <React.Fragment>
     <nav id="desktop_navigation">
       <div id="desktop_logo">
         {/* <Link to="/"> */}
@@ -44,5 +46,22 @@ export const Navigation = () => {
         </NavLink>
       </div>
     </nav>
-  )
-}
+
+    <nav id="mobile_navigation">
+      <Menu top>
+        <a id="home" className="menu-item" href="/">
+          Home
+        </a>
+        <a id="about" className="menu-item" href="/about">
+          About
+        </a>
+        <a id="contact" className="menu-item" href="/contact">
+          Contact
+        </a>
+        {/* <a onClick={this.showSettings} className="menu-item--small" href="">
+          Settings
+        </a> */}
+      </Menu>
+    </nav>
+  </React.Fragment>
+)
